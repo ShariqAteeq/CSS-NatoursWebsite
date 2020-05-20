@@ -1,3 +1,75 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+}
+
 body {
     font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    line-height: 1.7;
+    font-size: 16px;
+    color : #777;
+    padding: 30px;
 }
+
+.header {
+ height: 95vh;
+ background-image: linear-gradient(
+    to bottom ,
+  #7ed56fce , 
+  #28b485d5) ,
+    url('../img/hero.jpg');
+ background-size: cover;
+ background-position: top;
+ clip-path: polygon(0 0 , 100% 0 , 100% 75vh , 0 100%);
+ position: relative;
+}
+
+.logo-box {
+    position: absolute;
+    top: 40px;
+    left: 40px;
+}
+
+.logo {
+    height: 35px;
+}
+
+.heading-primary {
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.heading-primary-main {
+    display: block;
+    font-size: 60px;
+    letter-spacing: 35px;
+    font-weight: 400;
+}
+.heading-primary-sub {
+    display: block;
+    font-size: 20px;
+    letter-spacing: 17.4px;
+    font-weight: 400;
+}
+
+.text-box {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50% , -50%);
+}
+
+/* 95vh  mean {viewport Height} ye k ye hr screen me iski heigt 95% hogi
+back-cover ka matlb jitni width hogi uspr puri img cover hjaegi 
+linear gradient : to rigt , to bottom , to top jo hamari marzi ho krsakte hen 
+for triangle  clip-path: polygon(50% 0 , 50% 0 , 100% 100% , 0 100%);
+position relative is a parent of position absolute tw agr absolute me jo position define hgu 
+wo jahan relative define he waha se hngi
+
+display block full width leta he or before or after line break hti he..
+
+transform: translate(-50% , -50%); is se parent elemnt ki width count nh hti blk element i hti he
+*/
