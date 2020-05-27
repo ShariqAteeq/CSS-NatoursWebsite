@@ -1,21 +1,24 @@
 
-* {
+*,
+*::after,
+*::before {
     margin: 0;
     padding: 0;
-    box-sizing: border-box; 
+    box-sizing: inherit; 
 }
 
 html {
-    font-size: 10px; /* by default it is 16px */
+    font-size: 62.5% /* by default it is 16px  10/16 = 0.625 */
 }
 
 body {
     font-family: 'Lato', sans-serif;
     font-weight: 400;
     line-height: 1.7;
-    font-size: 16px;
+    /* font-size: 16px; */
     color : #777;
-    padding: 30px;
+    padding: 3rem;
+    box-sizing: border-box;
 }
 
 .header {
@@ -31,35 +34,34 @@ body {
  position: relative;
 }
 
-.logo-box {
+.header__logo-box {
     position: absolute;
     top: 4rem;
     left: 4rem;
 }
 
-.logo {
+.header__logo {
     height: 3.5rem;
 
-    animation-name: moveInLeft;
-    animation-duration: 2s;
+    animation: moveInLeft 1s ease-out;
 }
 
 .heading-primary {
     color: #fff;
     text-transform: uppercase;
     margin-bottom: 6rem;
-    backface-visibility: hidden; /* it remove back element and to prevent shaking animation*/
+    backface-visibility: hidden; 
+    /* it remove back element and to prevent shaking animation*/
 }
 
-.heading-primary-main {
+.heading-primary--main {
     display: block;
     font-size: 6rem;
     letter-spacing: 3.5rem;
     font-weight: 400;
-
     animation-name: moveInLeft;
      animation-duration: 1s;
-    animation-timing-function: ease-out; /*start fast and end slow*/
+    animation-timing-function: ease-out;   /*start fast and end slow*/
    
 
     /*
@@ -67,18 +69,15 @@ body {
     animation-iteration-count: 3; animation 3 bar calegi
     */
 }
-.heading-primary-sub {
+.heading-primary--sub {
     display: block;
     font-size: 2rem;
     letter-spacing: 1.75rem;
     font-weight: 700;
-
-    animation-name: moveInRight;
-    animation-duration: 1s;
-    animation-timing-function: ease-out;
+    animation: moveInRight 1s ease-out;
 }
 
-.text-box {
+.header__text-box {
     position: absolute;
     top: 40%;
     left: 50%;
@@ -107,19 +106,33 @@ body {
 
     0% {
         opacity: 0;
-        transform: translateX(10rem) rotate(-180deg);
-      
+        transform: translateX(10rem);
+        /* transform: translateX(10rem) rotate(-180deg); for rotating 180deg*/
     }
 
     80% {
-        transform: translateX(-1rem) rotate(-180deg);
+        transform: translateX(-1rem);
     }
     
     100% {
         opacity: 1;
-        transform: translate(0)
+        transform: translate(0);
     }
 }
+
+
+@keyframes moveInBottom {
+
+    0% {
+        opacity: 0;
+        transform: translateY(5rem);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
 
 .btn:link , 
 .btn:visited {
@@ -128,8 +141,9 @@ body {
     padding: 1.5rem 4rem; /* 15px for top, bottom and 40px for left,rigt */
     display: inline-block; /* because it is text thats why inline */
     border-radius: 10rem;
-    transition: all .2s;
+    /* transition: all .2s; */
     position: relative;
+    font-size: 1.6rem;
 }
 
 .btn:hover{
@@ -139,10 +153,10 @@ body {
 
 .btn:active{
     transform: translateY(-1px);
-    box-shadow: 0px .5rem 1rem rgba(0, 0, 0, .2);
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .2);
 }
 
-.btn-white{
+.btn--white{
     background-color: #fff;
     color: #777;
 }
@@ -152,12 +166,12 @@ body {
     display: inline-block;
     width: 100%;
     height: 100%;
-    border-radius: 100px;
+    border-radius: 10rem;
     position: absolute;
     top: 0;
-    left: 0;
+    left:0;
     z-index: -1; /* iska matlb after apne parent element yani btn k peche hga */
-    transition: all .5s;
+    /* transition: all .4s; */
 }
 
 .btn-white::after {
@@ -165,25 +179,14 @@ body {
 }
 
 .btn:hover::after {
-    transform: scaleX(1.4) scaleY(1.35) ; /* is se after ka size 1.5% double hjaega */
+    transform: scaleX(1.4) scaleY(1.6); /* is se after ka size 1.5% double hjaega */
     opacity: 0;
 }
 
-@keyframes moveInBottom {
-
-    0% {
-        opacity: 0;
-        transform: translateY(10rem) ;
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0)
-    }
-}
-
-.btn-animated {
-    animation: moveInBottom 1s ease-out 1s;
-    animation-fill-mode: backwards; /* it doesnt add delay */
+.btn--animated {
+    animation: moveInBottom .5s ease-out .75s;
+    animation-fill-mode: backwards; 
+    /* animation fill modde element ko shru se hi hi animation ki jaga rkhta he jese btn 5rem peche phle se hi hga */
 }
 
 
