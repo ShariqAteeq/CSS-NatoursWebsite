@@ -1,0 +1,210 @@
+
+
+$color-pri : #55c57a;
+$color-pri-light : #7ed56f;
+$color-pri-dark : #28b485;
+
+
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit; 
+}
+
+html {
+    font-size: 62.5% /* by default it is 16px  10/16 = 0.625 */
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    line-height: 1.7;
+    /* font-size: 16px; */
+    color : #777;
+    padding: 3rem;
+    box-sizing: border-box;
+}
+
+.header {
+ height: 95vh;
+ background-image: linear-gradient(
+    to bottom ,
+    rgba($color-pri-light , 0.8) , 
+  rgba($color-pri-dark,0.8)) ,
+    url('../img/hero.jpg');
+ background-size: cover;
+ background-position: top;
+ clip-path: polygon(0 0 , 100% 0 , 100% 75vh , 0 100%);
+ position: relative;
+}
+
+.header__logo-box {
+    position: absolute;
+    top: 4rem;
+    left: 4rem;
+}
+
+.header__logo {
+    height: 3.5rem;
+
+    animation: moveInLeft 1s ease-out;
+}
+
+.heading-primary {
+    color: #fff;
+    text-transform: uppercase;
+    margin-bottom: 6rem;
+    backface-visibility: hidden; 
+    /* it remove back element and to prevent shaking animation*/
+}
+
+.heading-primary--main {
+    display: block;
+    font-size: 6rem;
+    letter-spacing: 3.5rem;
+    font-weight: 400;
+    animation-name: moveInLeft;
+     animation-duration: 1s;
+    animation-timing-function: ease-out;   /*start fast and end slow*/
+   
+
+    /*
+    animation-delay: 2s; animation 2 sec bd start hgi page reload hne k bad
+    animation-iteration-count: 3; animation 3 bar calegi
+    */
+}
+.heading-primary--sub {
+    display: block;
+    font-size: 2rem;
+    letter-spacing: 1.75rem;
+    font-weight: 700;
+    animation: moveInRight 1s ease-out;
+}
+
+.header__text-box {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50% , -50%); /* it doesnt add parent element width */
+    text-align: center;
+}
+
+@keyframes moveInLeft {
+
+    0% {
+        opacity: 0;
+        transform: translateX(-10rem);
+    }
+
+    80% {
+        transform: translateX(1rem);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+@keyframes moveInRight {
+
+    0% {
+        opacity: 0;
+        transform: translateX(10rem);
+        /* transform: translateX(10rem) rotate(-180deg); for rotating 180deg*/
+    }
+
+    80% {
+        transform: translateX(-1rem);
+    }
+    
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+
+@keyframes moveInBottom {
+
+    0% {
+        opacity: 0;
+        transform: translateY(5rem);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+
+.btn:link , 
+.btn:visited {
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 1.5rem 4rem; /* 15px for top, bottom and 40px for left,rigt */
+    display: inline-block; /* because it is text thats why inline */
+    border-radius: 10rem;
+    /* transition: all .2s; */
+    position: relative;
+    font-size: 1.6rem;
+}
+
+.btn:hover{
+    transform: translateY(-3px); /* moving from bottom to top */
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, .2); /* 0 px for x , 10px for y 20 px for blur */
+}
+
+.btn:active{
+    transform: translateY(-1px);
+    box-shadow: 0px .5rem 1rem rgba(0, 0, 0, .2);
+}
+
+.btn--white{
+    background-color: #fff;
+    color: #777;
+}
+
+.btn::after { /* after element is like child so content likhna lazmi hta he after ko show krane k liye  */
+    content: "";
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    border-radius: 10rem;
+    position: absolute;
+    top: 0;
+    left:0;
+    z-index: -1; /* iska matlb after apne parent element yani btn k peche hga */
+    transition: all .4s;
+}
+
+.btn--white::after {
+    background-color: #fff;
+}
+
+.btn--white:hover::after {
+    transform: scaleX(1.6) scaleY(1.4); /* is se after ka size 1.5% double hjaega */
+    opacity: 0;
+}
+
+.btn--animated {
+    animation: moveInBottom .5s ease-out .75s;
+    animation-fill-mode: backwards; 
+    /* animation fill modde element ko shru se hi hi animation ki jaga rkhta he jese btn 5rem peche phle se hi hga */
+}
+
+
+
+/* 95vh  mean {viewport Height} ye k ye hr screen me iski heigt 95% hogi
+back-cover ka matlb jitni width hogi uspr puri img cover hjaegi 
+linear gradient : to rigt , to bottom , to top jo hamari marzi ho krsakte hen 
+for triangle  clip-path: polygon(50% 0 , 50% 0 , 100% 100% , 0 100%);
+position relative is a parent of position absolute tw agr absolute me jo position define hgu 
+wo jahan relative define he waha se hngi
+
+display block full width leta he or before or after line break hti he..
+
+transform: translate(-50% , -50%); is se parent elemnt ki width count nh hti blk element i hti he
+*/
