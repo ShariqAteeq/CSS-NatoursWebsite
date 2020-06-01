@@ -24,15 +24,20 @@ body {
   background-position: top;
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
   position: relative; }
-
-.header__logo-box {
-  position: absolute;
-  top: 4rem;
-  left: 4rem; }
-
-.header__logo {
-  height: 3.5rem;
-  animation: moveInLeft 1s ease-out; }
+  .header__logo-box {
+    position: absolute;
+    top: 4rem;
+    left: 4rem; }
+  .header__logo {
+    height: 3.5rem;
+    animation: moveInLeft 1s ease-out; }
+  .header__text-box {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    text-align: center;
+    transform: translate(-50%, -50%);
+    /* it doesnt add parent element width */ }
 
 .heading-primary {
   color: #fff;
@@ -40,35 +45,25 @@ body {
   margin-bottom: 6rem;
   backface-visibility: hidden;
   /* it remove back element and to prevent shaking animation*/ }
-
-.heading-primary--main {
-  display: block;
-  font-size: 6rem;
-  letter-spacing: 3.5rem;
-  font-weight: 400;
-  animation-name: moveInLeft;
-  animation-duration: 1s;
-  animation-timing-function: ease-out;
-  /*start fast and end slow*/
-  /*
-    animation-delay: 2s; animation 2 sec bd start hgi page reload hne k bad
-    animation-iteration-count: 3; animation 3 bar calegi
-    */ }
-
-.heading-primary--sub {
-  display: block;
-  font-size: 2rem;
-  letter-spacing: 1.75rem;
-  font-weight: 700;
-  animation: moveInRight 1s ease-out; }
-
-.header__text-box {
-  position: absolute;
-  top: 40%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  /* it doesnt add parent element width */
-  text-align: center; }
+  .heading-primary--main {
+    display: block;
+    font-size: 6rem;
+    letter-spacing: 3.5rem;
+    font-weight: 400;
+    animation-name: moveInLeft;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+    /*start fast and end slow*/
+    /*
+        animation-delay: 2s; animation 2 sec bd start hgi page reload hne k bad
+        animation-iteration-count: 3; animation 3 bar calegi
+        */ }
+  .heading-primary--sub {
+    display: block;
+    font-size: 2rem;
+    letter-spacing: 1.75rem;
+    font-weight: 700;
+    animation: moveInRight 1s ease-out; }
 
 @keyframes moveInLeft {
   0% {
@@ -99,32 +94,31 @@ body {
     opacity: 1;
     transform: translate(0); } }
 
-.btn:link,
-.btn:visited {
-  text-decoration: none;
+.btn:link, .btn:visited {
   text-transform: uppercase;
-  padding: 1.5rem 4rem;
-  /* 15px for top, bottom and 40px for left,rigt */
+  text-decoration: none;
   display: inline-block;
   /* because it is text thats why inline */
-  border-radius: 10rem;
+  padding: 1.5rem 4rem;
+  /* 15px for top, bottom and 40px for left,rigt */
   /* transition: all .2s; */
-  position: relative;
-  font-size: 1.6rem; }
+  border-radius: 10rem;
+  font-size: 1.6rem;
+  position: relative; }
 
 .btn:hover {
   transform: translateY(-3px);
   /* moving from bottom to top */
   box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
   /* 0 px for x , 10px for y 20 px for blur */ }
+  .btn:hover::after {
+    transform: scaleX(1.6) scaleY(1.4);
+    /* is se after ka size 1.5% double hjaega */
+    opacity: 0; }
 
 .btn:active {
   transform: translateY(-1px);
   box-shadow: 0px 0.5rem 1rem rgba(0, 0, 0, 0.2); }
-
-.btn--white {
-  background-color: #fff;
-  color: #777; }
 
 .btn::after {
   /* after element is like child so content likhna lazmi hta he after ko show krane k liye  */
@@ -140,13 +134,11 @@ body {
   /* iska matlb after apne parent element yani btn k peche hga */
   transition: all .4s; }
 
-.btn--white::after {
-  background-color: #fff; }
-
-.btn--white:hover::after {
-  transform: scaleX(1.6) scaleY(1.4);
-  /* is se after ka size 1.5% double hjaega */
-  opacity: 0; }
+.btn--white {
+  background-color: #fff;
+  color: #777; }
+  .btn--white::after {
+    background-color: #fff; }
 
 .btn--animated {
   animation: moveInBottom .5s ease-out .75s;
