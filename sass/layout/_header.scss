@@ -1,0 +1,30 @@
+.header {
+    height: 95vh;
+    background-image: linear-gradient(
+       to bottom ,
+       rgba($color-pri-light , 0.8) , 
+     rgba($color-pri-dark,0.8)) ,
+       url('../img/hero.jpg');
+    background-size: cover;
+    background-position: top;
+    clip-path: polygon(0 0 , 100% 0 , 100% 75vh , 0 100%);
+    position: relative;
+   
+       &__logo-box {
+           position: absolute;
+           top: 4rem;
+           left: 4rem;
+           
+       }
+       &__logo {
+           height: 3.5rem;
+           animation: moveInLeft 1s ease-out;  
+       }
+       &__text-box {
+           position: absolute;
+           top: 40%;
+           left: 50%;
+           text-align: center;
+           transform: translate(-50% , -50%); /* it doesnt add parent element width */ 
+       }
+   }

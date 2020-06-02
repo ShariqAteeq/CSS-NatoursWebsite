@@ -1,0 +1,41 @@
+body {
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    line-height: 1.7;
+    /* font-size: 16px; */
+    color : #777;
+    padding: 3rem;
+ 
+}
+
+.heading-primary {
+
+    color: #fff;
+    text-transform: uppercase;
+    margin-bottom: 6rem;
+    backface-visibility: hidden; 
+    /* it remove back element and to prevent shaking animation*/
+
+    &--main {
+        display: block;
+        font-size: 6rem;
+        letter-spacing: 3.5rem;
+        font-weight: 400;
+        animation-name: moveInLeft;
+         animation-duration: 1s;
+        animation-timing-function: ease-out;   /*start fast and end slow*/
+        /*
+        animation-delay: 2s; animation 2 sec bd start hgi page reload hne k bad
+        animation-iteration-count: 3; animation 3 bar calegi
+        */
+    }
+    &--sub {
+        display: block;
+        font-size: 2rem;
+        letter-spacing: 1.75rem;
+        font-weight: 700;
+        animation: moveInRight 1s ease-out;
+    }
+    
+
+}
