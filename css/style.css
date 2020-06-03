@@ -88,11 +88,24 @@ body {
     transform: skewX(15deg) skewY(2deg) scale(1.1);
     text-shadow: 0.5rem 1rem 2rem rgba(0, 0, 0, 0.2); }
 
+.heading-ter {
+  font-size: 1.6rem;
+  font-weight: 700;
+  text-transform: uppercase; }
+
+.para {
+  font-size: 1.6rem; }
+  .para:not(:last-child) {
+    margin-bottom: 30px; }
+
 .u-center-text {
   text-align: center; }
 
-.u-margin-bottom-8 {
+.large-mb {
   margin-bottom: 8rem; }
+
+.small-mb {
+  margin-bottom: 2rem; }
 
 .btn:link, .btn:visited {
   text-transform: uppercase;
@@ -144,6 +157,25 @@ body {
   animation: moveInBottom .5s ease-out .75s;
   animation-fill-mode: backwards;
   /* animation fill modde element ko shru se hi hi animation ki jaga rkhta he jese btn 5rem peche phle se hi hga */ }
+
+.btn-text:link, .btn-text:visited {
+  font-size: 1.6rem;
+  text-decoration: none;
+  color: #55c57a;
+  padding: 3px;
+  display: inline-block;
+  border-bottom: 1px solid #55c57a;
+  transition: all .4s; }
+
+.btn-text:hover {
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+  background-color: #55c57a;
+  color: #fff;
+  transform: translateY(-6px); }
+
+.btn-text:active {
+  transform: translateY(-2px);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); }
 
 .row {
   max-width: 114rem;

@@ -55,3 +55,28 @@
     /* animation fill modde element ko shru se hi hi animation ki jaga rkhta he jese btn 5rem peche phle se hi hga */
     }
 }
+
+.btn-text {
+    &:link,
+    &:visited {
+        font-size: 1.6rem;
+        text-decoration: none;
+        color: $color-pri;
+        padding: 3px;
+        display: inline-block;
+        border-bottom: 1px solid $color-pri;
+        transition: all .4s;
+    }
+
+    &:hover {
+        box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+        background-color: $color-pri;
+        color: #fff;
+        transform: translateY(-6px);
+    }
+
+    &:active {
+        transform: translateY(-2px);
+        box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 0.2);
+    }
+}
