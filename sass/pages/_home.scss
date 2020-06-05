@@ -1,6 +1,6 @@
 .section-about {
     background-color: #eeeeee;
-    padding: 25rem 0;
+    padding: 20rem 0;
     margin-top: -20vh;
 }
 
@@ -19,4 +19,10 @@
     & > * {
         transform: skewY(7deg);
     }
+}
+
+.section-tours {
+    background-color: #eeeeee;
+    padding: 20rem 0 50rem 0;
+    margin-top: -10rem;
 }
