@@ -187,21 +187,37 @@ body {
     color: white;
     font-size: 5rem;
     height: 50rem;
-    transition: all .8s;
+    transition: all 1s ease;
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    backface-visibility: hidden; }
+    overflow: hidden;
+    backface-visibility: hidden;
+    border-radius: 3px;
+    box-shadow: 0 1.5rem 4rem rgba(17, 17, 17, 0.2); }
     .card__side--front {
-      background-color: orange; }
+      background-color: white; }
     .card__side--back {
       background-color: yellow;
       transform: rotateY(180deg); }
+      .card__side--back-1 {
+        background-image: linear-gradient(to right bottom, #ffb900, #ff7730); }
   .card:hover .card__side--front {
-    transform: rotateY(180deg); }
+    transform: rotateY(-180deg); }
   .card:hover .card__side--back {
     transform: rotateY(0); }
+  .card__pic {
+    background-size: cover;
+    height: 23rem;
+    background-blend-mode: screen;
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%); }
+    .card__pic--1 {
+      background-image: linear-gradient(to right bottom, #ffb900, #ff7730), url("../../img/nat-5.jpg"); }
+    .card__pic--2 {
+      background-image: url("../../img/nat-5.jpg"); }
+    .card__pic--3 {
+      background-image: url("../../img/nat-5.jpg"); }
 
 .composition {
   position: relative; }
