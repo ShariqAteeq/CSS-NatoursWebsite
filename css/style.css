@@ -107,6 +107,9 @@ body {
 .small-mb {
   margin-bottom: 1rem; }
 
+.large-mt {
+  margin-top: 8rem; }
+
 .btn:link, .btn:visited {
   text-transform: uppercase;
   text-decoration: none;
@@ -153,6 +156,12 @@ body {
   .btn--white::after {
     background-color: #fff; }
 
+.btn--green {
+  background-color: #55c57a;
+  color: white; }
+  .btn--green::after {
+    background-color: #55c57a; }
+
 .btn--animated {
   animation: moveInBottom .5s ease-out .75s;
   animation-fill-mode: backwards;
@@ -179,13 +188,10 @@ body {
 
 .card {
   perspective: 150rem;
-  -moz-perspective: 13rem;
+  -moz-perspective: 150rem;
   position: relative;
   height: 50rem; }
   .card__side {
-    background-color: orangered;
-    color: white;
-    font-size: 5rem;
     height: 50rem;
     transition: all 1s ease;
     position: absolute;
@@ -199,10 +205,13 @@ body {
     .card__side--front {
       background-color: white; }
     .card__side--back {
-      background-color: yellow;
       transform: rotateY(180deg); }
       .card__side--back-1 {
         background-image: linear-gradient(to right bottom, #ffb900, #ff7730); }
+      .card__side--back-2 {
+        background-image: linear-gradient(to right bottom, #7ed56f, #28b485); }
+      .card__side--back-3 {
+        background-image: linear-gradient(to right bottom, #2998ff, #5643fa); }
   .card:hover .card__side--front {
     transform: rotateY(-180deg); }
   .card:hover .card__side--back {
@@ -211,13 +220,65 @@ body {
     background-size: cover;
     height: 23rem;
     background-blend-mode: screen;
-    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%); }
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px; }
     .card__pic--1 {
       background-image: linear-gradient(to right bottom, #ffb900, #ff7730), url("../../img/nat-5.jpg"); }
     .card__pic--2 {
-      background-image: url("../../img/nat-5.jpg"); }
+      background-image: linear-gradient(to right bottom, #7ed56f, #28b485), url("../../img/nat-6.jpg"); }
     .card__pic--3 {
-      background-image: url("../../img/nat-5.jpg"); }
+      background-image: linear-gradient(to right bottom, #2998ff, #5643fa), url("../../img/nat-7.jpg"); }
+  .card__heading {
+    font-size: 2.8rem;
+    font-weight: 500;
+    color: white;
+    text-transform: uppercase;
+    position: absolute;
+    top: 12rem;
+    right: 2rem;
+    width: 75%;
+    text-align: right; }
+    .card__heading__span {
+      padding: 1rem 1.5rem;
+      -webkit-box-decoration-break: clone;
+      box-decoration-break: clone; }
+      .card__heading__span--1 {
+        background-image: linear-gradient(to right bottom, rgba(255, 185, 0, 0.8), rgba(255, 119, 48, 0.8)); }
+      .card__heading__span--2 {
+        background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)); }
+      .card__heading__span--3 {
+        background-image: linear-gradient(to right bottom, rgba(41, 152, 255, 0.8), rgba(86, 67, 250, 0.8)); }
+  .card__details {
+    padding: 3rem; }
+    .card__details ul {
+      list-style: none;
+      width: 80%;
+      margin: 0 auto;
+      color: #494747; }
+      .card__details ul li {
+        font-size: 1.5rem;
+        padding: 1rem;
+        text-align: center;
+        text-transform: capitalize; }
+        .card__details ul li:not(:last-child) {
+          border-bottom: .5px solid #eee; }
+  .card__cta {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    text-align: center; }
+  .card__price-box {
+    text-align: center;
+    margin-bottom: 8rem;
+    color: white; }
+    .card__price-box--only {
+      font-size: 2.4rem;
+      text-transform: uppercase; }
+    .card__price-box--value {
+      font-size: 6rem; }
 
 .composition {
   position: relative; }
@@ -260,6 +321,7 @@ body {
     font-size: 6rem;
     background-image: linear-gradient(to right, #7ed56f, #28b485);
     -webkit-background-clip: text;
+    background-clip: text;
     color: transparent; }
 
 .row {

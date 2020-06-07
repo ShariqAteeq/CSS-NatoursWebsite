@@ -48,6 +48,15 @@
             background-color: #fff;
         }
     }
+
+    &--green {
+        background-color: $color-pri;
+        color: white;
+
+        &::after {
+            background-color: $color-pri;
+        }
+    }
     
     &--animated {
          animation: moveInBottom .5s ease-out .75s;
