@@ -1,0 +1,76 @@
+.nav {
+
+    &__checkbox {
+        display: none;
+    }
+
+    &__label {
+        height: 7rem;
+        width: 7rem;
+        position: fixed;
+        top: 6rem;
+        right: 6rem;
+        z-index: 400;
+        border-radius: 50%;
+        background-color: $color-white;
+        
+    }
+
+    &__bg {
+        width: 6rem;
+        height: 6rem;
+        border-radius: 50%;
+        background-image: radial-gradient($color-pri-light , $color-pri-dark);
+        position: fixed;
+        top: 6.5rem;
+        right: 6.5rem;
+        z-index: 300;
+        transform: scale(80);
+    }
+
+    &__element {
+        height: 100vh;
+        width: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 350;
+    }
+
+    &__list {
+        list-style: none;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        text-align: center;
+        
+    }
+
+    &__item {
+        margin: 1rem;
+    }
+
+    &__link {
+        &:link,
+        &:visited {
+        display: inline-block;
+        font-size: 3rem;
+        font-weight: 300;
+        color: #fff;
+        text-decoration: none;
+        text-transform: uppercase;
+        padding: 1rem 2rem;
+        background-image: linear-gradient(120deg , transparent 0%,  transparent 50%, white 50%);
+        background-size: 230%;
+        transition: all .4s;
+        
+        }
+        &:hover,
+        &:active {
+            background-position: 100%;
+            color: $color-pri;
+            transform: translateX(1rem);
+        }
+    }
+}
