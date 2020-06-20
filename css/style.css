@@ -1,3 +1,13 @@
+/*
+Media query manager
+
+phone ~ 0-600px
+tab-port ~ 600-900px
+tab-land ~ 900-1200px
+destop-normal ~ 1200-1800px
+big screen ~ 1800 + 
+
+*/
 @keyframes moveInLeft {
   0% {
     opacity: 0;
@@ -35,7 +45,17 @@
   box-sizing: inherit; }
 
 html {
-  font-size: 62.5%; }
+  font-size: 62.5%;
+  /* by default it is 16px  10/16 = 0.625 */ }
+  @media (max-width: 75em) {
+    html {
+      font-size: 56.25%; } }
+  @media (max-width: 56.25em) {
+    html {
+      font-size: 50%; } }
+  @media (max-width: 112.5em) {
+    html {
+      font-size: 75%; } }
 
 body {
   box-sizing: border-box; }
@@ -438,10 +458,9 @@ body {
     position: absolute;
     left: 50%;
     top: 50%;
-    transform: translate(-50%, -50%) scale(0.5);
+    transform: translate(-50%, -50%) scale(0.3);
     background-color: white;
     display: table;
-    vertical-align: middle;
     overflow: hidden;
     border-radius: 3px;
     box-shadow: 0 2rem 4rem rgba(17, 17, 17, 0.3);

@@ -20,10 +20,9 @@
         position: absolute;
         left: 50%;
         top: 50%;
-        transform: translate(-50%,-50%) scale(.5);
+        transform: translate(-50%,-50%) scale(.3);
         background-color: white;
         display: table;
-        vertical-align: middle;
         overflow: hidden;
         border-radius: 3px;
         box-shadow: 0 2rem 4rem rgba($black, .3);
