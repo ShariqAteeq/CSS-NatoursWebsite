@@ -8,7 +8,11 @@
 }
 
 html {
-    font-size: 62.5%; /* by default it is 16px  10/16 = 0.625 */
+    font-size: 62.5%; 
+    /* 
+    by default browser font size is 16px  10/16 = 0.625 
+    if we write font-size = 100% its mean font-size is 16px
+    */ 
 
     @include respond(tab-land) { //width <=1200
         font-size: 56.25%; // 1em = 9px 9/16
@@ -25,4 +29,9 @@ html {
 
 body {
     box-sizing: border-box;
+    padding: 3rem;
+
+    @include respond(tab-port) {
+        padding: 0;
+    }
 }

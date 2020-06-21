@@ -17,7 +17,7 @@ big screen ~ 1800 +
 
 */
 //by default em is 16px
-// em basically direct browser ka font-size leta he wo parent element se affected nh hta jese wha hmne 62.5 
+// em basically direct browser ka font-size leta he wo parent element se affected nh hta jese hmne html ki body me hmne 62.5 
 // assign kra wa he
 @mixin respond($breakpoint) {
     @if $breakpoint == phone {
@@ -33,6 +33,6 @@ big screen ~ 1800 +
     }
 
     @if $breakpoint == big-desktop {
-        @media (max-width:112.5em) {  @content  }; //1800px
+        @media (min-width:112.5em) {  @content  }; //1800px
     }
 }
