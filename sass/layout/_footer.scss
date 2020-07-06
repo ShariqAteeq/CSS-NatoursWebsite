@@ -9,6 +9,10 @@
 
     &__logo-box {
        text-align: center; //image is inline elements
+
+       @include respond(tab-port) {
+            margin-bottom: 6rem;
+        }
     }
 
     &__logo {

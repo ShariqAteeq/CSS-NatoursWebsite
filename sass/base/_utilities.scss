@@ -1,9 +1,20 @@
 .u-center-text { text-align: center !important; }
 
-.large-mb { margin-bottom: 8rem !important; }
+.large-mb { margin-bottom: 8rem !important; 
+
+    @include respond(tab-port) {
+       margin-bottom: 5rem !important;
+    }
+
+}
 
 .small-mb { margin-bottom: 2rem !important; }
 
-.medium-mb { margin-bottom: 4rem !important; }
+.medium-mb { margin-bottom: 4rem !important; 
+
+    @include respond(tab-port) {
+        margin-bottom: 3rem !important;
+    }
+}
 
 .large-mt { margin-top: 8rem !important; }

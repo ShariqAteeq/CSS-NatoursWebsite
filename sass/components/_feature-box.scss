@@ -7,6 +7,9 @@
     text-align: center;
     transition: all .4s;
 
+    @include respond(tab-port) {
+        padding: 2rem;
+    }
 
     &:hover {
         transform: translateY(-1.5rem) scale(1.03);
