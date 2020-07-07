@@ -32,6 +32,10 @@ big screen ~ 1800 +
         @media (max-width:75em) {  @content  }; //1200px
     }
 
+    @if $breakpoint == med-desktop {
+        @media (max-width:93.75em) {  @content  }; //1500px
+    }
+    
     @if $breakpoint == big-desktop {
         @media (min-width:112.5em) {  @content  }; //1800px
     }

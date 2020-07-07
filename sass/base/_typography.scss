@@ -59,11 +59,12 @@ body {
     transition: all .2s;
 
     @include respond(tab-land) {
-        font-size: 2.5rem !important;
+        font-size: 3rem;
     }
    
     @include respond(tab-port) {
-        font-size: 3rem;
+        font-size: 2.5rem;
+        letter-spacing: 0;
     }
 
     @include respond(phone) {
